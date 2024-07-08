@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Find Your Uber</title>
+    <meta http-equiv="Cache-Control" content="max-age=31536000, must-revalidate">
+    <meta http-equiv="Expires" content="Tue, 07 Jul 2025 00:00:00 GMT">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        @font-face {
+            font-family: 'CharlesWright';
+            src: url('fonts/CharlesWright-Bold.otf') format('opentype');
+        }
+    </style>
+    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCmG6VIwN8DPga1qGF57SF-l9ta6vf85AM&libraries=places"></script>
+    <script defer src="script.js"></script>
+</head>
+<body>
+    <div class="container">
+        <h1>Find Your Uber</h1>
+        <form id="carForm">
+            <label for="reg">Registration Number:</label>
+            <input type="text" id="reg" name="reg" required>
+            <label for="make">Make:</label>
+            <input type="text" id="make" name="make" required>
+            <label for="model">Model:</label>
+            <input type="text" id="model" name="model" required>
+            <button type="button" onclick="saveCarInfo()">Submit</button>
+        </form>
+        <div id="regPlate" class="reg-plate">NU24 REG</div>
+        <div id="carDetails" class="hidden">
+            <img id="carImage" src="" alt="Car Image">
+            <button type="button" onclick="resetCarInfo()">Reset Car</button>
+            <button type="button" onclick="getLocation()">Locate Me</button>
+        </div>
+        <div id="locationDetails" class="hidden">
+            <p id="postalAddress"></p>
+            <p id="w3wAddress"></p>
+            <p id="shareLink"></p>
+            <div id="streetView"></div>
+        </div>
+    </div>
+</body>
+</html>
